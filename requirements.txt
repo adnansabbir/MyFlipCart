@@ -1,0 +1,70 @@
+E commerce aplication - MyFlipCart
+
+Requirements
+1. All sellers will register their product on ProductCatelogue
+2. Customers are provided with all the product of the productCatalogue
+3. Customers can search product
+4. Customers can add items to their Cart
+5. Items contains 1 more quantity of products
+6. Customers can place order i.e checkout
+7. After checkout order is confirmed and order Invoice is generated
+8. On confirm order Order shipment is generated
+
+
+Assumtions
+1. Seller will be able to update item from the product catelogue
+2. Products will have categories
+4. Customers will have order history
+5. Customers will be two types -> order and seller
+7. Orders have different states -> Created, Pending, Confirmed, OnTheWay, Shipped, Cancelled, Completed
+8. Customers will be able to track the status of the Order
+9. Order state PaymentCompleted will be added later
+
+Questions
+1. Will products have quantities ? Yes
+2. Will we show products with quantity 0 ?
+3. Should we send notification ? Yes
+4. For now shipment is 1 but we might extend later
+5. Include other categories with a name
+6. Track cancelletion reason
+7. Shipment has cost
+8. Refund Invoice
+9. There are shipment types like -> express, regular
+
+
+Users --|> Registered User -->  Seller, Customer
+Product
+Item
+Cart
+Order
+Invoice
+Shipment
+Cataglogue
+Categories
+OrderState
+App
+Notification
+
+
+Behaviours
+
+^ Sellers can add and update product
+
+Customers can get all products
+Customers can search products by name
+
+^ Customers can add items to their cart
+Customers can checkout cart
+On Checkout generate invoice with shipment cost
+Order changes it's state
+validate if all products are available
+
+Get order state
+Cancel Order
+
+Onshippment order is completed
+On failed shipment order is cancelled
+
+
+Future
+Customer can claim refund
